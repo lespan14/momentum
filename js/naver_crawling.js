@@ -1,5 +1,5 @@
 var Crawler = require("crawler");
- 
+
 var c = new Crawler({
     maxConnections : 10,
     // This will be called for each crawled page
@@ -17,13 +17,13 @@ var c = new Crawler({
             let newsList = [];
             $bodyList.each(function(i, elem) {
                 newsList[i] = $(this).find('a.thumb img').attr('alt');
-              });
+            });
 
             console.log(newsList);
         }
         done();
     }
 });
- 
+
 // Queue just one URL, with default callback
 c.queue('http://www.naver.com');
